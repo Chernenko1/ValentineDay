@@ -10,7 +10,7 @@ export const Main = () => {
     return (
         <View style={styles.view}>
            <Text style ={styles.text}>Will you be my Valentine?</Text>
-           <Image source={require('../../../assets/jbear.gif')}/>
+           <Image source={require('../../../assets/jbear.gif')} style={styles.gif}/>
            <View style={styles.buttonView}>
                 <Button text="Yes!" color="green" onPress={() => console.log('yes')} textSize={yesSize}/>
                 <Button text = "No!" color="red" onPress={() => setNoCount(noCount + 1)}/>
@@ -32,5 +32,9 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 24
+    },
+    gif: {
+        width: '50%', 
+        height: '20%'
     }
 })
