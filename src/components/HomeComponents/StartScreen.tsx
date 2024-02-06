@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, View } from "react-native"
 import { Button } from "../components/Button"
 import { useState } from "react"
+import { Registration } from "../UserInfoComponents/Registration"
 
 const BUTTON_TEXT: string[] = [
     'No','Are you sure?','Really sure?', 'Think again','Last chance!','Surely not?',
@@ -27,6 +28,7 @@ export const StartScreen = ({changeScreen}: Props) => {
 
     return (
         <View style={styles.view}>
+            <Registration />
             <Text style ={styles.text}>Will you be my Valentine?</Text>
             <Image source={require('../../../assets/jbear.gif')} style={styles.gif}/>
             <View style={styles.buttonView}>
