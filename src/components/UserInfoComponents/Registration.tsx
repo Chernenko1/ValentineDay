@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Modal, Pressable, StyleSheet, Text, TextInput, View } from "react-native"
 import { Button } from "../components/Button";
 import { saveData } from "../../firebase/login";
+import { storeAppData } from "../../utils/storage/storageAppUserInfo";
 
 export const Registration = () => {
     const [modalVisible, setModalVisible] = useState(true);
@@ -11,6 +12,7 @@ export const Registration = () => {
     const dataSave = () => {
         if(login !== '') {
             saveData(login,media)
+            storeAppData('true')
             setModalVisible(false)
         }
     }

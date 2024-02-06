@@ -5,7 +5,7 @@ export const getAppData = async () => {
       const value = await AsyncStorage.getItem('app');
       if (value !== null) {
         return value
-      }
+      }else return 'false'
     } catch (e) {
         console.log(e)
     }

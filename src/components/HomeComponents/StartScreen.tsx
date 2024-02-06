@@ -1,7 +1,8 @@
 import { Image, StyleSheet, Text, View } from "react-native"
 import { Button } from "../components/Button"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Registration } from "../UserInfoComponents/Registration"
+import { getAppData } from "../../utils/storage/readAppUserInfo"
 
 const BUTTON_TEXT: string[] = [
     'No','Are you sure?','Really sure?', 'Think again','Last chance!','Surely not?',
@@ -17,7 +18,9 @@ interface Props {
 export const StartScreen = ({changeScreen}: Props) => {
     const [noCount, setNoCount] = useState(0)
     const [yesSize, setYesSize] = useState(18)
+    const [isFirstStart, setIsFirstStart] = useState('false')
 
+    
     const handleNoClick = () => {
         if( noCount === 15) {
         } else {
@@ -25,10 +28,20 @@ export const StartScreen = ({changeScreen}: Props) => {
             setNoCount(prev => prev + 1)
         }
     }
+    
+    
+    let handleFunc = async () =>{
+        let answer = await getAppData()
+      console.log(2 + '' + answer)
+      setIsFirstStart(answer as string) 
+    }
+        useEffect(() => {handleFunc()}, [])
+
+    console.log(1 + '' + isFirstStart)
 
     return (
         <View style={styles.view}>
-            <Registration />
+            {isFirstStart === 'true' ? null : <Registration /> }
             <Text style ={styles.text}>Will you be my Valentine?</Text>
             <Image source={require('../../../assets/jbear.gif')} style={styles.gif}/>
             <View style={styles.buttonView}>
