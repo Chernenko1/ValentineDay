@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "654671563541",
+    "project_id": "valentine-637a2",
+    "storage_bucket": "valentine-637a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654671563541:android:2e8d4a09c2534882bef71c",
+        "android_client_info": {
+          "package_name": "com.valentineapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBv9vv_j8HYMyKznqQSL01pTMyGw5Nm6Ug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
